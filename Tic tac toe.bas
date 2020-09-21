@@ -1,5 +1,8 @@
-global player
+global player, turn
+
 player = 1
+turn = 0
+
 dim moves(2, 2)
 
 graphicbox #handle.gbox, 0, 0, 300, 300
@@ -32,6 +35,7 @@ sub draw
         end if
         moves(int(MouseX/100), int(MouseY/100)) = player
     end if
+    turn = turn + 1
 end sub
 
 sub wincondition 'fucked this part up
@@ -51,6 +55,8 @@ sub wincondition 'fucked this part up
         case (moves(1, 0) = player) and (moves(1, 1) = player) and (moves(1, 2) = player)
             end
         case (moves(2, 0) = player) and (moves(2, 1) = player) and (moves(2, 2) = player)
+            end
+        case turn = 9
             end
     end select
     if player = 1 then
