@@ -18,9 +18,6 @@ wait
 [move]
     call draw
     call wincondition
-    print "x: ";MouseX
-    print "y: ";MouseY
-    print int(MouseX/100)
     wait
 
 sub draw
